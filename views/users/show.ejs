@@ -1,0 +1,9 @@
+<%- include('../partials/head') %>
+
+<h1><%= user.username %>'s Pantry</h1>
+
+  <% user.pantry.forEach(item => { %>
+    <div><%= item.name %></div>
+  <% }); %>
+
+<%- include('../partials/footer') %>

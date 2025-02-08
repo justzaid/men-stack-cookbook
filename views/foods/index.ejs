@@ -1,0 +1,30 @@
+<%- include('../partials/head') %>
+
+    <h1>Welcome to my Pantry</h1>
+
+    <button><a class="nav-link" href="/users/<%= user._id %>/foods/new">Add a new Item</a></button>
+
+    <div class="container">
+
+        <h1>Pantry List</h1>
+        <ul>
+          <% pantry.forEach(item => { %>
+          <% if (item.name) { %>
+            <li><h5><%= item.name %></h5>
+              <form action="/users/<%= user._id %>/foods/<%= item._id %>?_method=DELETE" method="POST">
+                <button type="submit" class="btn btn-danger">Delete this pantry</button>
+              </form>
+              <form action="/users/<%= user._id %>/foods/<%= item._id %>/edit" method="GET">
+                <button type="submit" class="btn btn-warning">Edit this pantry</button>
+              </form>
+
+            </li>
+          <% } else { %>
+           There are no items in this pantry.
+          <% }}); %>
+        </ul>
+    
+    </div>
+
+
+<%- include('../partials/footer') %>

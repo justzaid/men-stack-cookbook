@@ -1,0 +1,17 @@
+<%- include('../partials/head') %>
+
+<div class="container">
+
+    <h1>Create new Pantry</h1>
+    
+    <form action="/users/<%= user._id %>/foods" method="POST">
+        
+        <label for="name">Pantry name: </label>
+        <input type="text" name="name">
+        
+        <button type="submit" class="btn btn-primary">Add Pantry</button>
+
+    </form>
+</div>
+
+<%- include('../partials/footer') %>
