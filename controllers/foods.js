@@ -30,8 +30,8 @@ const postNewPantry = async (req, res) => {
         await currentUser.save()
         res.redirect(`/users/${currentUser._id}/foods`)
 
-    } catch (e) {
-        console.log(e)
+    } catch (error) {
+        console.log(error)
         res.redirect('/')
     }
 }
